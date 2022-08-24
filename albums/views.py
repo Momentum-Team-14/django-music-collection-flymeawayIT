@@ -15,14 +15,12 @@ def album_detail(request, pk):
 
 def create_album(request,):
     return render(request, "albums/create_album.html", {"albums": albums})
-    # if request.method == "POST":
-    #     form = AlbumForm(request.Post)
-    #     if form.is_valid():
-    #         post = form.save(commit=False)
-    #         post.author = request.user
-    #         post.save()
-    #         return redirect('album_detail', pk=post.pk)
-    # else:
-    #     form = AlbumForm()
-    # return render(request, 'albums/create_album.html', {"form": form})
+    if request.method == "POST":
+        form = AlbumForm(request.Post)
+        if form.is_valid():
+            album = form.save()
+            return redirect('albums_collection')
+    else:
+        form = AlbumForm()
+    return render(request, 'albums/create_album.html', {"form": form})
 
