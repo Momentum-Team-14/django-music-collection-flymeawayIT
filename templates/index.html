@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <header>
+
+        <div id=""main_title">Gary's Music Collection        
+        </div>
+    </header>
+    <p>The Collection has the following album counts:</p>
+    <ul>
+        <li class="main-page-list">Albums: {{ num_albums }}</li>
+        <li> class="main-page-list"Artists: {{ num_artists }}</li>
+    </ul>
+{% endblock content %}

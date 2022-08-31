@@ -1,6 +1,21 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-% block content %
+{% block content %}
 <h2>Album Details</h2>
     <h2> {{ album }} </h2>
+{% endblock content %}
+
+<p><strong>Artist</strong>{{album.artist}}</p>
+
+{% block content %}
+    <h3>class ="entry_title"><em>{{ album.title }}</em></h3>
+
+
+    <p>Artist: <a class="entry_title href="{% url 'artist_detail' album.artist.pk %} ">{{ album.artist }}</a></p>
+    <p>Genre: {{ album.genre }}</p>
+    <p>Created at: {{ album.created_at }}</p>
+    <p><a href="{% url 'album_update' album.pk %}">Edit</a></p>
+    <p><a href="{% url 'album_delete' album.pk %}">Delete</a></p>
+
+
 {% endblock content %}

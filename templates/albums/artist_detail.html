@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+% block content %
+<h1>class="entry_title">{{ artist.name }}</h1>
+
+<p>field placeholder<a href=""</a></p>
+<p><a href="{% url 'artist_update' artist.pk %}">Edit</a></p>
+<p><a href="{% url 'artist_delete' artist.pk %}">Delete</a></p>
+
+<div>style="margin-left:20px;margin-top:20px"</div>
+    <h4>Albums:</h4>
+
+    <dl>
+    {% for album in artist.album.set.all %} 
+        <dt><a class="entry.title" href="{% url 'album_detail' album.pk %}">{{ album }}</a></dt>
+        <dd></dd>
+    {% endfor %}
+</dl>
+
+{% endblock content %}
