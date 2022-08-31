@@ -12,11 +12,11 @@ def album_collection(request):
 
 def album_detail(request, pk):
     album = get_object_or_404(Album, pk=pk)
-    return render(request, "albums/album_detail.html", {"albums": albums})
+    return render(request, "albums/album_detail.html", {"albums": album_detail})
 
 
 def create_album(request,):
-    return render(request, "albums/create_album.html", {"albums": albums})
+    return render(request, "albums/create_album.html", {"albums": create_album})
     if request.method == "POST":
         form = AlbumForm(request.Post)
         if form.is_valid():
