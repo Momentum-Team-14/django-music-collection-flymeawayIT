@@ -3,7 +3,7 @@
 
 {% block content %}
 <a href="{% url 'album_collection' %}" class="top-page">Home</a> 
-<h2>New Album</h2>
+<p><a href="{% url 'create_album' %}">Add New Album</a><p>
 <form method="POST" class="new-form">{% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="save btn btn-secondary">Save</button>

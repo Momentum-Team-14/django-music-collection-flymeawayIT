@@ -11,7 +11,16 @@
 </head>
 <body>
     <h1>Gary's Album Collection</h1>
+    <header>
+        <p>The Collection has the following album counts:</p>
+    </header>
+        <ul>
+            <li class="main-page-list">Albums: {{ num_albums }}</li>
+            <li class="main-page-list">Artists: {{ num_artists }}</li>
+        </ul>
     {% block content %}
     {% endblock content %}
+
+
 </body>
 </html>

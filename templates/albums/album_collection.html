@@ -4,17 +4,17 @@
 {% block title %}Album List{% endblock title %}
 {% block content %}
         <header>
-            <h1><a href="/">By Artist</a></h1>  
+            <h1><em>by Artist</em></h1> 
         </header>
         <article>
             <h2><a href="">Albums</a></h2>
             <ul>
             {% for album in albums %}  
-                <li>
+                <li> 
                     <em><a class="entry-list" href="{{ album.get.absolute_url }}">{{ album }}</a></em>
-                    <p> class="album-list-artist">by {{album.artist}}</p>
+                    <!-- <p>class="album-list-artist"> by {{album.artist}}</p>  -->
                 </li>
-            <article>{{ album }}</article> 
+            <!-- <article>{{ album }}</article>  -->
             {% endfor %}
             </ul>
             <p><a href="{% url 'create_album' %}">Add Album</a></p>
